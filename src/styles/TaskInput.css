@@ -1,0 +1,53 @@
+.TaskInput{
+    /* Variables */
+    --height: 50px;
+    --form-gutter: 24px;
+    
+    /*  */
+    position: fixed;
+    width: calc(100vw - calc( 2 * var(--gutter)) );
+    min-height: var(--height);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    bottom: var(--gutter);
+    left: var(--gutter);
+    right: var(--gutter);
+    background-color: var(--light-2-color);
+    border-radius: 5px;
+    margin-top: 1em;
+}            
+
+.TaskInput-Input{
+    flex: 1;
+    display: inline;
+    font: inherit;
+    color: var(--highlight-color);
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    font-size: 16px;
+    height: auto;
+}
+
+.TaskInput-Input:focus {
+    outline: none;
+}
+
+.TaskInput-Input::placeholder{
+    color: var(--highlight-color);
+}
+
+.TaskInput-Form{
+    width: calc(100% - var(--form-gutter));
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 6px;
+}
+
+form svg{
+    display: inline;
+    padding-right: 10px;
+}
