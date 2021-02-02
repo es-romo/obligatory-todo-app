@@ -5,8 +5,10 @@ import DateFormat from 'dateformat'
 export default function Heading() {
     return (
         <div className='Heading'>
-            <h1>Tasks</h1>
-            <h3>{DateFormat(Date.now(),"dddd, mmmm dS")}</h3>
+            <h1 className='Heading-List'>Tasks</h1>
+            <h3 className='Heading-Date'>
+                {DateFormat(Date.now(),"dddd, mmmm dS")}
+            </h3>
         </div>
     )
 }
