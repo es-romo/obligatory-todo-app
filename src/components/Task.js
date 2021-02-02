@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Font, { Text } from 'react-font'
+import '../styles/Task.css'
 
 export default class Task extends Component {
     render() {

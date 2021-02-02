@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './TaskList.css'
+import '../styles/TaskList.css'
 
 export default class TaskList extends Component {
     render() {
