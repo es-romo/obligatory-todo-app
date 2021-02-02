@@ -1,21 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-.App{
-  background-color: var(--light-1-color);
-  min-height: calc(100vh - 40px);
-  width: calc(100vw - 40px);
-  padding: 20px;
-}
-
 :root{
-  
   /* Colors */
   --highlight-color: #FCDAB7;
   --light-1-color: #1E5F74;
   --light-2-color: #133B5C;
   --dark-color: #1D2D50;
-
+  /*  */
+  --gutter: 15px;
 }
 
 body {
