@@ -1,19 +1,17 @@
 import React from 'react'
-import Heading from './components/Heading'
-import './styles/App.css'
+import './App.css'
 
+import Heading from './components/Heading'
+import TaskInput from './components/TaskInput'
+import TaskList from './components/TaskList'
 
 class App extends React.Component {
-  
-  constructor(){
-    super()
-    this.state = {}
-  }
-
   render(){
     return (
       <div className="App">
         <Heading/>
+        <TaskList />
+        <TaskInput />
       </div>
     );
   }
