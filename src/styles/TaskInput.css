@@ -26,6 +26,8 @@
     /* Margin, Border, Padding */
     border-radius: 5px;
     padding: 0 15px;
+    /* Others */
+    filter: var(--shadow);
 }
 
 .TaskInput-Input{
