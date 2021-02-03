@@ -6,17 +6,18 @@ export default class TaskInput extends React.Component {
     
     constructor(){
         super()
-        this.state = {}
+        this.state = {
+            text: ''
+        }
 
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleSubmit(event){
         event.preventDefault()
-        let task = event.target['0'].value
-        if(!task) return
-        console.log(task)
-        event.target['0'].value = null
+        if(!this.state.text) return
+        this.props.addTask(this.state.text)
+        this.setState({text: ''})
     }
 
     render(){
@@ -25,7 +26,11 @@ export default class TaskInput extends React.Component {
             <div className="TaskInput" >
                 <form className="TaskInput-Form" onSubmit={this.handleSubmit}>
                     <FaPlus onClick={this.handleSubmit}/>
-                    <input placeholder="Add a Todo" className="TaskInput-Input"></input>
+                    <input 
+                    value={this.state.text}
+                    onChange={e => this.setState({text: e.target.value})}
+                    className="TaskInput-Input"
+                    placeholder="Add a Todo" />
                 </form>
             </div>
         )

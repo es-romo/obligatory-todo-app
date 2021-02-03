@@ -24,3 +24,8 @@
     height: 22px;
     padding-right: 10px;
 }
+
+.Task-Completed{
+    font-style: italic;
+    text-decoration: line-through;
+}
