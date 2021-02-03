@@ -1,0 +1,6 @@
+.TaskList{
+    padding-bottom: calc(
+        ( var(--gutter) * 2)
+        + var(--task-height)
+    );
+}

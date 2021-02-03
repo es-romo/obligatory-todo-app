@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import '../styles/TaskList.css'
 
 import Task from './Task'
 
