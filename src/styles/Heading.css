@@ -6,6 +6,7 @@
     position: -webkit-sticky;
     padding: 1em 0;
     top: 0;
+    z-index: 99;
 }
 .Heading > .Heading-List{
     font-size: 2em;
