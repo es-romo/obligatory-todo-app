@@ -55,5 +55,7 @@
 
 
 .TaskInput-Form svg{
+    width: 22px;
+    height: 22px;
     padding-right: 10px;
 }
