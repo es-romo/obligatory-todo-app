@@ -1,30 +1,16 @@
 import React, { Component } from 'react'
-import '../styles/TaskList.css'
+import tasksData from '../tasksData'
 
 import Task from './Task'
 
 export default class TaskList extends Component {
     constructor(){
         super()
-        this.state= {
-            tasks: [
-                {
-                    text: 'Walk the dog',
-                    completed: false
-                },
-                {
-                    text: 'Eat Ass',
-                    completed: true
-                },
-                {
-                    text: 'Buy groceries',
-                    completed: false
-                }
-            ]
-        }
+        this.state = { tasks: tasksData }
     }
+
     render() {
-        let tasks = this.state.tasks.map( (task) => <Task task={task}/> )
+        const tasks = this.state.tasks.map( (task) => <Task task={task} key={task.id}/> )
 
         return (
             <div className='TaskList'>
