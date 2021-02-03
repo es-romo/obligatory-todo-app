@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import '../styles/Task.css'
 
-import {FaRegCircle, FaRegCheckCircle} from 'react-icons/fa'
+import {FaRegCircle, FaCheckCircle} from 'react-icons/fa'
 
 export default class Task extends Component {
 
     render() {
         const icon = this.props.task.completed ? 
-            <FaRegCheckCircle onClick={()=>this.props.flipComplete(this.props.task.id)}/> : 
+            <FaCheckCircle onClick={()=>this.props.flipComplete(this.props.task.id)}/> : 
             <FaRegCircle onClick={()=>this.props.flipComplete(this.props.task.id)}/>
         const clases = `Task ${this.props.task.completed ? 'Task-Completed': null}`
         
