@@ -1,33 +1,48 @@
 .TaskInput{
-    /* Variables */
-    --height: 50px;
-    --form-gutter: 24px;
-    
-    /*  */
+    /* Positioning */
     position: fixed;
-    width: calc(100vw - calc( 2 * var(--gutter)) );
-    min-height: var(--height);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* Display */
     display: flex;
     justify-content: left;
     align-items: center;
-    bottom: var(--gutter);
-    left: var(--gutter);
-    right: var(--gutter);
-    background-color: var(--light-2-color);
-    border-radius: 5px;
-    margin-top: 1em;
+    /* Colors */
+    background-color: var(--light-1-color);
+    /* Margin, Border, Padding */
+    padding: var(--gutter);
 }            
 
+.TaskInput-Form{
+    /* Sizeing */
+    min-height: var(--task-height);
+    width: 100%;
+    /* Display */
+    display: flex;
+    align-items: center;
+    /* Colors */
+    background-color: var(--light-2-color);
+    /* Margin, Border, Padding */
+    border-radius: 5px;
+    padding: 0 15px;
+}
+
 .TaskInput-Input{
-    flex: 1;
+    /* Sizeing */
+    height: auto;
+    /* Display */
     display: inline;
+    flex: 1;
+    /* Font */
     font: inherit;
-    color: var(--highlight-color);
+    font-size: 16px;
+    /* Margin, Border, Padding */
     border: 0;
     padding: 0;
+    /* Colors */
+    color: var(--highlight-color);
     background-color: transparent;
-    font-size: 16px;
-    height: auto;
 }
 
 .TaskInput-Input:focus {
@@ -38,16 +53,7 @@
     color: var(--highlight-color);
 }
 
-.TaskInput-Form{
-    width: calc(100% - var(--form-gutter));
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-left: 6px;
-}
 
-form svg{
-    display: inline;
+.TaskInput-Form svg{
     padding-right: 10px;
 }

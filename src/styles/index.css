@@ -9,6 +9,8 @@
   --dark-color: #1D2D50;
   /*  */
   --gutter: 15px;
+  /* Components */
+  --task-height: 50px;
 }
 
 body {

@@ -1,17 +1,16 @@
 .Task{
-        /* Variables */
-        --height: 50px;
-        --form-gutter: 24px;
-        
-        /*  */
-        width: calc(100vw - calc( 2 * var(--gutter)) );
-        min-height: var(--height);
-        display: flex;
-        justify-content: left;
-        align-items: center;
-        background-color: var(--light-2-color);
-        border-radius: 5px;
-        margin-bottom: .5em;
+    /* Sizeing */
+    min-height: var(--task-height);
+    /* Display */
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    /* Colors */
+    background-color: var(--light-2-color);
+    /* Margin, Border, Padding */
+    border-radius: 5px;
+    margin-bottom: .5em;
+    padding-left: 15px;
 }
 
 .Task-Text{
@@ -20,15 +19,7 @@
     font-size: 16px;
 }
 
-.Task-Container{
-    width: calc(100% - var(--form-gutter));
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    padding-left: 6px;
-}
-
-.Task-Container svg{
+.Task svg{
     display: inline;
     padding-right: 10px;
 }

@@ -8,10 +8,8 @@ export default class Task extends Component {
         let icon = <FaPlus />
         return (
             <div className="Task">
-                <div className='Task-Container'>
-                    {icon}
-                    <p className="Task-Text">{this.props.task.text }</p>
-                </div>
+                {icon}
+                <p className="Task-Text">{this.props.task.text }</p>
             </div>
         )
     }
