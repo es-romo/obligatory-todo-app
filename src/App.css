@@ -1,10 +1,12 @@
 .App{
     background-color: var(--light-1-color);
     min-height: calc(100vh - var(--gutter) );
-    width: calc(100vw - calc( 2 * var(--gutter) ));
-    padding: var(--gutter);
     padding-top: 0;
   }
+  
+.App-Container{
+    padding: var(--gutter);
+}
   
 /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ 
 @media (min-width:320px) { 

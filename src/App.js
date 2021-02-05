@@ -45,7 +45,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <Heading/>
-        <TaskList tasks={this.state.tasks} flipComplete={this.flipComplete} />
+        <div className="App-Container">
+          <TaskList tasks={this.state.tasks} flipComplete={this.flipComplete} />
+        </div>
         <TaskInput addTask={this.addTask}/>
       </div>
     );
