@@ -1,5 +1,4 @@
 import React from 'react'
-import tasksData from './tasksData'
 import './App.css'
 
 import Heading from './components/Heading'
@@ -10,15 +9,32 @@ class App extends React.Component {
 
   constructor(){
     super()
-    this.state = { tasks: tasksData }
+    this.state = { tasks: [] }
     this.addTask = this.addTask.bind(this)
     this.flipComplete = this.flipComplete.bind(this)
+    this.getTasks = this.getTasks.bind(this)
+    this.setTasks = this.setTasks.bind(this)
+  }
+
+  componentDidMount(){
+    this.getTasks()
+  }
+
+  getTasks(){
+    const tasks = JSON.parse(window.localStorage.getItem('tasks') || "[]")
+    if (tasks) this.setState({tasks: tasks})
+  }
+  
+  setTasks(){
+    let tasks = this.state.tasks
+      .map( task => ({...task}))
+      .filter(task => !task.completed)
+    window.localStorage.setItem('tasks',JSON.stringify(tasks))
   }
 
   addTask(text){
-    const tasks = this.state.tasks;
-    const id = tasks ? tasks[tasks.length - 1].id + 1 : 1
-
+    const tasks = this.state.tasks
+    const id = tasks.length ? tasks[tasks.length - 1].id + 1 : 1
     const task = {
       id: id,
       text: text,
@@ -28,7 +44,8 @@ class App extends React.Component {
     const mergeState = {
       tasks: [ ...tasks, task ],
     };
-    this.setState(mergeState)
+
+    this.setState(mergeState,()=>this.setTasks())
   }
 
   flipComplete(id){
@@ -37,8 +54,7 @@ class App extends React.Component {
       if (task.id === id) task.completed = !task.completed
       return task;
     })
-    console.log(newState.tasks)
-    this.setState(newState)
+    this.setState(newState,()=>this.setTasks())
   }
 
   render(){
@@ -46,7 +62,11 @@ class App extends React.Component {
       <div className="App">
         <Heading/>
         <div className="App-Container">
-          <TaskList tasks={this.state.tasks} flipComplete={this.flipComplete} />
+          {
+            this.state.tasks === undefined || this.state.tasks.length === 0 ? 
+            <h1>Try adding some tasks</h1> :
+            <TaskList tasks={this.state.tasks} flipComplete={this.flipComplete} />
+          }
         </div>
         <TaskInput addTask={this.addTask}/>
       </div>
