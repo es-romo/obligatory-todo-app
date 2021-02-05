@@ -7,6 +7,18 @@
 .App-Container{
     padding: var(--gutter);
 }
+
+.App-SVG{
+  max-height: 200px;
+}
+
+.App-Empty{
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
   
 /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ 
 @media (min-width:320px) { 

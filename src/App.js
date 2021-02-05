@@ -1,4 +1,5 @@
 import React from 'react'
+import listSVG from './assets/checkList.svg'
 import './App.css'
 
 import Heading from './components/Heading'
@@ -64,7 +65,10 @@ class App extends React.Component {
         <div className="App-Container">
           {
             this.state.tasks === undefined || this.state.tasks.length === 0 ? 
-            <h1>Try adding some tasks</h1> :
+            <div className="App-Empty">
+              <img className="App-SVG" src={listSVG} alt="Checklist"></img>
+              <p>Try adding some tasks</p>
+            </div> :
             <TaskList tasks={this.state.tasks} flipComplete={this.flipComplete} />
           }
         </div>
