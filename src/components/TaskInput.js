@@ -30,7 +30,7 @@ export default class TaskInput extends React.Component {
                     value={this.state.text}
                     onChange={e => this.setState({text: e.target.value})}
                     className="TaskInput-Input"
-                    placeholder="Add a Todo" />
+                    placeholder="Add a task" />
                 </form>
             </div>
         )
