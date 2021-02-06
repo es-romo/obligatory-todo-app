@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+html{
+  background-color: var(--light-1-color);
+}
+
 :root{
   /* Colors */
   --highlight-color: #FCDAB7;
