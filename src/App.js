@@ -38,7 +38,7 @@ class App extends React.Component {
 
   addTask(text){
     const tasks = this.state.tasks
-    const id = tasks.length ? tasks[tasks.length - 1].id + 1 : 1
+    const id = tasks.length ? Math.max.apply(Math, tasks.map(x => x.id)) + 1 : 1
     const task = {
       id: id,
       text: text,
