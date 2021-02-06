@@ -6,7 +6,7 @@ You can try it [here](https://es-romo.github.io/obligatory-todo-app/).
 
 ## Todo
 
-- Add drag and drop
+- Drag and drop ✅
 - Separete completed tasks
 - Change the logo
 - Add themes
