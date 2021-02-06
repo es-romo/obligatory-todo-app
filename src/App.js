@@ -2,6 +2,8 @@ import React from 'react'
 import listSVG from './assets/checkList.svg'
 import './App.css'
 
+import {DragDropContext} from 'react-beautiful-dnd'
+
 import Heading from './components/Heading'
 import TaskInput from './components/TaskInput'
 import TaskList from './components/TaskList'
@@ -15,6 +17,7 @@ class App extends React.Component {
     this.flipComplete = this.flipComplete.bind(this)
     this.getTasks = this.getTasks.bind(this)
     this.setTasks = this.setTasks.bind(this)
+    this.onDragEnd = this.onDragEnd.bind(this)
   }
 
   componentDidMount(){
@@ -58,21 +61,39 @@ class App extends React.Component {
     this.setState(newState,()=>this.setTasks())
   }
 
+  onDragEnd(result){
+    const { destination, source } = result;
+    
+    if (!destination) return
+    if (destination.index === source.index) return
+    console.log(`Source: ${source.index}`)
+    console.log(`Destination: ${destination.index}`)
+    let tasks = [...this.state.tasks]
+    let task = tasks[source.index]
+    tasks.splice(source.index,1)
+    tasks.splice(destination.index,0,task)
+    this.setState({tasks: tasks}, ()=>this.setTasks())
+  }
+
   render(){
     return (
       <div className="App">
-        <Heading/>
-        <div className="App-Container">
-          {
-            this.state.tasks === undefined || this.state.tasks.length === 0 ? 
-            <div className="App-Empty">
-              <img className="App-SVG" src={listSVG} alt="Checklist"></img>
-              <p>Try adding some tasks</p>
-            </div> :
-            <TaskList tasks={this.state.tasks} flipComplete={this.flipComplete} />
-          }
-        </div>
-        <TaskInput addTask={this.addTask}/>
+        <DragDropContext
+          onDragEnd={this.onDragEnd}
+        >
+          <Heading/>
+          <div className="App-Container">
+            {
+              this.state.tasks === undefined || this.state.tasks.length === 0 ? 
+              <div className="App-Empty">
+                <img className="App-SVG" src={listSVG} alt="Checklist"></img>
+                <p>Try adding some tasks</p>
+              </div> :
+              <TaskList tasks={this.state.tasks} flipComplete={this.flipComplete} />
+            }
+          </div>
+          <TaskInput addTask={this.addTask}/>
+        </DragDropContext>
       </div>
     );
   }

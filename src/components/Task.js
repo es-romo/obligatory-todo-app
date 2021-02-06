@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import '../styles/Task.css'
 
 import {FaRegCircle, FaCheckCircle} from 'react-icons/fa'
+import {Draggable} from 'react-beautiful-dnd'
 
 export default class Task extends Component {
 
@@ -12,10 +13,19 @@ export default class Task extends Component {
         const clases = `Task ${this.props.task.completed ? 'Task-Completed': null}`
         
         return (
-            <div className={clases}>
-                {icon}
-                <p className="Task-Text">{this.props.task.text }</p>
-            </div>
+            <Draggable draggableId={this.props.task.id.toString()} index={this.props.index}>
+                { (provided) => (
+                    <div 
+                        className={clases}
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                        ref={provided.innerRef}
+                    >
+                        {icon}
+                        <p className="Task-Text">{this.props.task.text }</p>
+                    </div>
+                )}
+            </Draggable>
         )
     }
 
