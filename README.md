@@ -1,6 +1,6 @@
 # Obligatory React To Do App
 
-The all-famous unspoken requirement to learn React.
+The all-famous requirement to learn React (or almost anything tbh).
 
 You can try it [here](https://es-romo.github.io/obligatory-todo-app/).
 
