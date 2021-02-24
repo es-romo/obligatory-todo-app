@@ -66,8 +66,6 @@ class App extends React.Component {
     
     if (!destination) return
     if (destination.index === source.index) return
-    console.log(`Source: ${source.index}`)
-    console.log(`Destination: ${destination.index}`)
     let tasks = [...this.state.tasks]
     let task = tasks[source.index]
     tasks.splice(source.index,1)
