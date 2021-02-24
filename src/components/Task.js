@@ -7,15 +7,14 @@ import {Draggable} from 'react-beautiful-dnd'
 export default class Task extends Component {
 
     render() {
-        const icon = this.props.task.completed ? 
-            <FaCheckCircle onClick={()=>this.props.flipComplete(this.props.task.id)}/> : 
-            <FaRegCircle onClick={()=>this.props.flipComplete(this.props.task.id)}/>
-        const clases = `Task ${this.props.task.completed ? 'Task-Completed': null}`
+        const icon = this.props.task.completed ? <FaCheckCircle /> : <FaRegCircle />
+        const clases = `Task${this.props.task.completed ? ' Task-Completed': ''}`
         
         return (
             <Draggable draggableId={this.props.task.id.toString()} index={this.props.index}>
                 { (provided) => (
                     <div 
+                        onClick={()=>this.props.flipComplete(this.props.task.id)}
                         className={clases}
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
